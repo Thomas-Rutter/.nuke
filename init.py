@@ -11,8 +11,9 @@ import nuke
 
 def add_custom_plugin_paths():
     """Add the custom plugin paths."""
-    nuke.pluginAddPath('./gizmos')
-    nuke.pluginAddPath('./python')
+    nuke.pluginAddPath("./gizmos")
+    nuke.pluginAddPath("./python")
+    nuke.pluginAddPath("./icons")
 
 
 def set_knob_defaults():
