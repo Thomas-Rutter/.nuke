@@ -62,6 +62,39 @@ def create_keyboard_shortcuts():
     )
 
 
+def create_merge_shortcuts():
+    """Create merge node shortcuts."""
+    merge_menu = nuke.menu("Nodes").findItem("Merge/Merges")
+    merge_menu.addCommand(
+        "Stencil",
+        "nuke.createNode('Merge2', 'operation stencil bbox B')",
+        "alt+o",
+        icon="Output.png",
+        shortcutContext=2
+    )
+    merge_menu.addCommand(
+        "Mask",
+        "nuke.createNode('Merge2', 'operation mask bbox A')",
+        "alt+i",
+        icon="Input.png",
+        shortcutContext=2
+    )
+    merge_menu.addCommand(
+        "Plus",
+        "nuke.createNode('Merge2', 'operation plus')",
+        "alt+]",
+        icon="MergePlus.png",
+        shortcutContext=2
+    )
+    merge_menu.addCommand(
+        "From",
+        "nuke.createNode('Merge2', 'operation from')",
+        "alt+[",
+        icon="MergeFrom.png",
+        shortcutContext=2
+    )
+
+
 def main():
     """Run functions to setup nuke.
 
@@ -71,6 +104,7 @@ def main():
     create_utilities_menu()
     create_gizmos_menu()
     create_keyboard_shortcuts()
+    create_merge_shortcuts()
 
 
 if __name__ == "__main__":
